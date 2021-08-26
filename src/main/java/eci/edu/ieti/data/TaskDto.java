@@ -9,7 +9,7 @@ public class TaskDto {
     };
     private String name;
     private String description;
-    private String status;
+    private StatusType status;
     private String assignedTo;
     private Date dueDate;
     private Date created;
@@ -17,7 +17,7 @@ public class TaskDto {
     public TaskDto(String name, String description,StatusType status, String assignedTo, Date dueDate, Date created) {
         this.name = name;
         this.description = description;
-        this.status=status.toString();
+        this.status=status;
         this.assignedTo = assignedTo;
         this.dueDate = dueDate;
         this.created = created;
@@ -29,6 +29,14 @@ public class TaskDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public StatusType getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusType status) {
+        this.status = status;
     }
 
     public String getDescription() {
