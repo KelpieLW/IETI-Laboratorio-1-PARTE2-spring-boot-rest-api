@@ -1,12 +1,11 @@
 package eci.edu.ieti.data;
 
+import eci.edu.ieti.model.StatusType;
+
 import java.util.Date;
 
 public class TaskDto {
-    private enum StatusType
-    {
-        TODO, DOING, REVIEW, DONE
-    };
+
     private String name;
     private String description;
     private StatusType status;
@@ -14,7 +13,7 @@ public class TaskDto {
     private Date dueDate;
     private Date created;
 
-    public TaskDto(String name, String description,StatusType status, String assignedTo, Date dueDate, Date created) {
+    public TaskDto(String name, String description, StatusType status, String assignedTo, Date dueDate, Date created) {
         this.name = name;
         this.description = description;
         this.status=status;

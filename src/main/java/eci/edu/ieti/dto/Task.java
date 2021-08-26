@@ -1,14 +1,13 @@
 package eci.edu.ieti.dto;
 
+import eci.edu.ieti.model.StatusType;
+
 import java.util.Date;
 import java.util.UUID;
 
 public class Task {
 
-    private enum StatusType
-    {
-        TODO, DOING, REVIEW, DONE
-    };
+
     private String id;
     private String name;
     private String description;
@@ -17,6 +16,16 @@ public class Task {
     private Date dueDate;
     private Date created;
 
+    /**
+     *
+     * Constructor con identificador UUID automatizado
+     * @param name
+     * @param description
+     * @param status
+     * @param assignedTo
+     * @param dueDate
+     * @param created
+     */
     public Task(String name, String description, StatusType status, String assignedTo, Date dueDate, Date created) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
@@ -26,7 +35,29 @@ public class Task {
         this.dueDate = dueDate;
         this.created = created;
     }
+    /**
+     *
+     * Constructor con identificador personalizado por el usuario
+     * @param name
+     * @param description
+     * @param status
+     * @param assignedTo
+     * @param dueDate
+     * @param created
+     */
+    public Task(String id, String name, String description, StatusType status, String assignedTo, Date dueDate, Date created) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.status=status;
+        this.assignedTo = assignedTo;
+        this.dueDate = dueDate;
+        this.created = created;
+    }
 
+    /**
+     * Getters y setters
+     */
     public String getId() {
         return id;
     }
